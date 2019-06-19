@@ -13,22 +13,23 @@ namespace ExtensionMethodsOef
             IEnumerable<Leveranciers> LeveranciersLijst = Leveranciers.getLeveranciers();
             foreach(Leveranciers l in LeveranciersLijst)
             {
-                LeveranciersInfo.Add($"Naam:{l.Naam}\nAdres:{l.Adres.Straat} {l.Adres.Nummer}, {l.Adres.PostCode} {l.Adres.Gemeente}" +
-                    $"\nHeeftSchuld:{l.HeeftSchuld}\nTegoed:{l.Tegoed}");
+                LeveranciersInfo.Add($"Naam:{l?.Naam ?? "NoName"}\nAdres:{l?.Adres?.Straat} " +
+                    $"{l?.Adres?.Nummer}, {l?.Adres?.PostCode} {l?.Adres?.Gemeente}" +
+                    $"\nHeeftSchuld:{l?.HeeftSchuld}\nTegoed:{l?.Tegoed}");
             }
 
-            foreach(string l in LeveranciersInfo)
-            {
-                Console.WriteLine(l);
-            }
-            //PrintLijst(LeveranciersInfo);
+            PrintLijst(LeveranciersInfo);
             Console.ReadKey();
         }
         public static void PrintLijst(List<string> lijst)
         {
-            foreach(string l in lijst)
+            int teller = 1;
+            foreach (string l in lijst)
             {
+                Console.WriteLine("\nLeverancier " + teller.ToString());
+                Console.WriteLine("-----------------------------------\n");
                 Console.WriteLine(l);
+                teller++;
             }
         }
     }

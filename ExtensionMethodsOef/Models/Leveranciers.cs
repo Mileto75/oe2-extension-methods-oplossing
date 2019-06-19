@@ -18,7 +18,9 @@ namespace ExtensionMethodsOef.Models
             Leveranciers l3 = new Leveranciers { Naam = "Delhaize", Adres = new Adres("Molenstraat", "6", "Brugge", "8000"), Tegoed = 45699 };
             Leveranciers l4 = new Leveranciers { Naam = "Colruyt", Adres = new Adres("Legeweg", "167", "Gent", "9000"), Tegoed = 11000};
             Leveranciers l5 = new Leveranciers { Naam = "AlbertHeijn", Adres = new Adres("Kerkstraat", "2", "Brugge", "8000"), Tegoed = 8654};
-            return new Leveranciers[] { l1, l2, l3, l4,l5 };
+            Leveranciers l6 = new Leveranciers { Naam = null, Adres = new Adres("Kerkstraat", "2", "Brugge", "8000"), Tegoed = 8654 };
+
+            return new Leveranciers[] { l1, l2, l3, l4,l5,new Leveranciers() };
         }
 
     }
