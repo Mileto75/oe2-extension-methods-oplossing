@@ -20,8 +20,12 @@ namespace ExtensionMethodsOef
                     $"{l?.Adres?.Nummer}, {l?.Adres?.PostCode} {l?.Adres?.Gemeente}" +
                     $"\nHeeftSchuld:{l?.HeeftSchuld}\nTegoed:{l?.Tegoed}");
             }
-            //adding aantal Leveranciers met schuld
+            //getting aantal Leveranciers met schuld using class method
             LeveranciersInfo.Add($"Aantal Leveranciers met schuld:{Lrepo.TelLeveranciersMetSchuld()}");
+
+            //getting total amount of Tegoed from levernaciers repo
+            //using extension method
+            LeveranciersInfo.Add($"totaal Aantal Tegoed:{Lrepo.GetTotalTegoed():N0}");
 
             PrintLijst(LeveranciersInfo);
             Console.ReadKey();
@@ -37,6 +41,7 @@ namespace ExtensionMethodsOef
                 Console.WriteLine(l);
                 teller++;
             }
+            
         }
     }
 }

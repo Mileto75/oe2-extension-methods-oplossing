@@ -7,6 +7,7 @@ namespace ExtensionMethodsOef.Models
 {
     public class LeveranciersRepository :IEnumerable<Leveranciers>
     {
+        //protecting LeveranciersLijst from outside access
         private IEnumerable<Leveranciers> LeveranciersLijst;
 
         public IEnumerator<Leveranciers> GetEnumerator()
@@ -14,10 +15,14 @@ namespace ExtensionMethodsOef.Models
             return LeveranciersLijst.GetEnumerator();
         }
 
+        /**
+         * fills the leverancierslijst
+         */
         public void FillList(IEnumerable<Leveranciers> Lijst)
         {
             LeveranciersLijst = Lijst;
         }
+
         public int TelLeveranciersMetSchuld()
         {
             int Totaal = 0;
