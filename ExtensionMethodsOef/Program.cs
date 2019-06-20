@@ -26,7 +26,7 @@ namespace ExtensionMethodsOef
             //getting total amount of Tegoed from levernaciers repo
             //using extension method
             LeveranciersInfo.Add($"totaal Aantal Tegoed:{Lrepo.GetTotalTegoed():N0}");
-
+            
             IEnumerable<Leveranciers> Llijst = Leveranciers.getLeveranciers();
 
             Console.WriteLine($"TotalTegoedFromExtensionMethod: {Llijst.GetTotalTegoed():N0}");

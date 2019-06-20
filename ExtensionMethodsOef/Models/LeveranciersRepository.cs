@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ExtensionMethodsOef.Models
 {
-    public class LeveranciersRepository :IEnumerable<Leveranciers>
+    public class LeveranciersRepository : IEnumerable<Leveranciers>
     {
         //protecting LeveranciersLijst from outside access
         private IEnumerable<Leveranciers> LeveranciersLijst;
@@ -23,6 +23,9 @@ namespace ExtensionMethodsOef.Models
             LeveranciersLijst = Lijst;
         }
 
+        /**
+         * Filtermethod gets all the Leveranciers with debt
+         */
         public int TelLeveranciersMetSchuld()
         {
             int Totaal = 0;
