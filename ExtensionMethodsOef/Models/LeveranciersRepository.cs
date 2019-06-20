@@ -15,6 +15,10 @@ namespace ExtensionMethodsOef.Models
             return LeveranciersLijst.GetEnumerator();
         }
 
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return LeveranciersLijst.GetEnumerator();
+        }
         /**
          * fills the leverancierslijst
          */
@@ -39,9 +43,6 @@ namespace ExtensionMethodsOef.Models
             return Totaal;
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return LeveranciersLijst.GetEnumerator();
-        }
+        
     }
 }

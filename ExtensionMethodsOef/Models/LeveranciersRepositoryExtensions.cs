@@ -37,5 +37,19 @@ namespace ExtensionMethodsOef.Models
             }
             return LeveranciersMetMinimumTeGoed ;
         }
+
+        /**
+         * generic filter method
+         */
+        public static IEnumerable<Leveranciers> GetByFilter(this IEnumerable<Leveranciers> Llijst, Func<Leveranciers, bool> result)
+        {
+            foreach(Leveranciers l in Llijst)
+            {
+                if(result(l))
+                {
+                    yield return l;
+                }
+            }
+        }
     }
 }

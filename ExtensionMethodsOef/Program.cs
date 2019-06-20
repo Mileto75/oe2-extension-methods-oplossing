@@ -23,13 +23,19 @@ namespace ExtensionMethodsOef
             //getting aantal Leveranciers met schuld using class method
             LeveranciersInfo.Add($"Aantal Leveranciers met schuld:{Lrepo.TelLeveranciersMetSchuld()}");
 
-            //getting total amount of Tegoed from levernaciers repo
+            //getting total amount of Tegoed from leveranciers repo
             //using extension method
             LeveranciersInfo.Add($"totaal Aantal Tegoed:{Lrepo.GetTotalTegoed():N0}");
             
+            //getting TotalTeGoed from IEnumerable Leveranciers
+            //showing that the extension method applies to all IEnumerable<Leveranciers> type
             IEnumerable<Leveranciers> Llijst = Leveranciers.getLeveranciers();
-
             Console.WriteLine($"TotalTegoedFromExtensionMethod: {Llijst.GetTotalTegoed():N0}");
+
+            //Using GetByFilter extension method with Lambda expressions
+            //casting to list
+            IEnumerable<Leveranciers> filteredLeveranciers = Llijst.GetByFilter(g => g.HeeftSchuld == true);
+            
             //call the print function
             PrintLijst(LeveranciersInfo);
             Console.ReadKey();
