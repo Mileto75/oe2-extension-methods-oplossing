@@ -10,13 +10,18 @@ namespace ExtensionMethodsOef
         {
             //make a string list
             List<string> LeveranciersInfo = new List<string>();
-            IEnumerable<Leveranciers> LeveranciersLijst = Leveranciers.getLeveranciers();
-            foreach(Leveranciers l in LeveranciersLijst)
+            //We vervangen de List door onze niewe repo klasse
+            //IEnumerable<Leveranciers> LeveranciersLijst = Leveranciers.getLeveranciers();
+            LeveranciersRepository Lrepo = new LeveranciersRepository();
+            Lrepo.LeveranciersLijst = Leveranciers.getLeveranciers();
+            foreach (Leveranciers l in Lrepo.LeveranciersLijst)
             {
                 LeveranciersInfo.Add($"Naam:{l?.Naam ?? "NoName"}\nAdres:{l?.Adres?.Straat} " +
                     $"{l?.Adres?.Nummer}, {l?.Adres?.PostCode} {l?.Adres?.Gemeente}" +
                     $"\nHeeftSchuld:{l?.HeeftSchuld}\nTegoed:{l?.Tegoed}");
             }
+            //adding aantal Leveranciers met schuld
+            LeveranciersInfo.Add($"Aantal Leveranciers met schuld:{Lrepo.TelLeveranciersMetSchuld()}");
 
             PrintLijst(LeveranciersInfo);
             Console.ReadKey();
@@ -26,6 +31,7 @@ namespace ExtensionMethodsOef
             int teller = 1;
             foreach (string l in lijst)
             {
+                
                 Console.WriteLine("\nLeverancier " + teller.ToString());
                 Console.WriteLine("-----------------------------------\n");
                 Console.WriteLine(l);
