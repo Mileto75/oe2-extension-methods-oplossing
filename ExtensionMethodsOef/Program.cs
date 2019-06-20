@@ -13,8 +13,8 @@ namespace ExtensionMethodsOef
             //We vervangen de List door onze niewe repo klasse
             //IEnumerable<Leveranciers> LeveranciersLijst = Leveranciers.getLeveranciers();
             LeveranciersRepository Lrepo = new LeveranciersRepository();
-            Lrepo.LeveranciersLijst = Leveranciers.getLeveranciers();
-            foreach (Leveranciers l in Lrepo.LeveranciersLijst)
+            Lrepo.FillList(Leveranciers.getLeveranciers());
+            foreach (Leveranciers l in Lrepo)
             {
                 LeveranciersInfo.Add($"Naam:{l?.Naam ?? "NoName"}\nAdres:{l?.Adres?.Straat} " +
                     $"{l?.Adres?.Nummer}, {l?.Adres?.PostCode} {l?.Adres?.Gemeente}" +

@@ -1,13 +1,23 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
 namespace ExtensionMethodsOef.Models
 {
-    public class LeveranciersRepository
+    public class LeveranciersRepository :IEnumerable<Leveranciers>
     {
-        public IEnumerable<Leveranciers> LeveranciersLijst { get; set; }
+        private IEnumerable<Leveranciers> LeveranciersLijst;
 
+        public IEnumerator<Leveranciers> GetEnumerator()
+        {
+            return LeveranciersLijst.GetEnumerator();
+        }
+
+        public void FillList(IEnumerable<Leveranciers> Lijst)
+        {
+            LeveranciersLijst = Lijst;
+        }
         public int TelLeveranciersMetSchuld()
         {
             int Totaal = 0;
@@ -19,6 +29,11 @@ namespace ExtensionMethodsOef.Models
                 }
             }
             return Totaal;
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return LeveranciersLijst.GetEnumerator();
         }
     }
 }
