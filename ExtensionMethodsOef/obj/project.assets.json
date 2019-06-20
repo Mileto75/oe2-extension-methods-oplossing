@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mileto.di.marco\\source\\repos\\ExtensionMethodsOef\\ExtensionMethodsOef\\ExtensionMethodsOef.csproj",
+      "projectUniqueName": "C:\\Users\\mileto.di.marco\\OneDrive - Hogeschool West-Vlaanderen\\HBO5\\AC1920\\webBackEnd\\Les1\\voorbeelden_cursus\\extensionMethodsOEF\\ExtensionMethodsOef\\ExtensionMethodsOef.csproj",
       "projectName": "ExtensionMethodsOef",
-      "projectPath": "C:\\Users\\mileto.di.marco\\source\\repos\\ExtensionMethodsOef\\ExtensionMethodsOef\\ExtensionMethodsOef.csproj",
+      "projectPath": "C:\\Users\\mileto.di.marco\\OneDrive - Hogeschool West-Vlaanderen\\HBO5\\AC1920\\webBackEnd\\Les1\\voorbeelden_cursus\\extensionMethodsOEF\\ExtensionMethodsOef\\ExtensionMethodsOef.csproj",
       "packagesPath": "C:\\Users\\mileto.di.marco\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mileto.di.marco\\source\\repos\\ExtensionMethodsOef\\ExtensionMethodsOef\\obj\\",
+      "outputPath": "C:\\Users\\mileto.di.marco\\OneDrive - Hogeschool West-Vlaanderen\\HBO5\\AC1920\\webBackEnd\\Les1\\voorbeelden_cursus\\extensionMethodsOEF\\ExtensionMethodsOef\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
