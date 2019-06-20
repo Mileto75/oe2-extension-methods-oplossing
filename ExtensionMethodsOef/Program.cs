@@ -1,6 +1,7 @@
 ﻿using ExtensionMethodsOef.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ExtensionMethodsOef
 {
@@ -33,9 +34,10 @@ namespace ExtensionMethodsOef
             Console.WriteLine($"TotalTegoedFromExtensionMethod: {Llijst.GetTotalTegoed():N0}");
 
             //Using GetByFilter extension method with Lambda expressions
-            //casting to list
-            IEnumerable<Leveranciers> filteredLeveranciers = Llijst.GetByFilter(g => g.HeeftSchuld == true);
-            
+         
+            IEnumerable<Leveranciers> filteredLeveranciers = Llijst.GetByFilter(g => g.HeeftSchuld != true);
+            //filtereredLeveranciers.count() is een Linq extension method
+            Console.WriteLine($"Eer zijn {filteredLeveranciers.Count()} Leverancier(s) die schulden hebben!");
             //call the print function
             PrintLijst(LeveranciersInfo);
             Console.ReadKey();
